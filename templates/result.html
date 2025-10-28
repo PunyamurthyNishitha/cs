@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #caf0f8;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            width: 300px;
+            margin: auto;
+            box-shadow: 0 0 10px gray;
+        }
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: white;
+            background: #0077b6;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        a:hover {
+            background: #023e8a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if error %}
+            <h3>{{ error }}</h3>
+        {% else %}
+            <h2>{{ weather.city }}, {{ weather.country }}</h2>
+            <h3>{{ weather.temp }}°C</h3>
+            <p>{{ weather.description }}</p>
+        {% endif %}
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>
